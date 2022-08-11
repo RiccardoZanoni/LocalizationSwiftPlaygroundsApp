@@ -1,0 +1,21 @@
+import Foundation
+
+var languageDevice: String = Locale.current.languageCode ?? "" // Device language code.
+
+struct LanguagesDataApp {
+    var Name = "Name" // Default value in English.
+}
+
+func getLanguagesDataApp() -> LanguagesDataApp {
+    
+    if languageDevice == "it" {
+        return LanguagesDataApp(Name: "Nome")
+        
+    } else {
+        return LanguagesDataApp(Name: "Name") // Default in case of other languages than English or Italian.
+    }
+    
+}
+
+print(languageDevice) // If the device is in English it will return "en", but if it is in Italian it will return "it".
+print(getLanguagesDataApp().Name) // If the device is in English it will return "Name", but if it is in Italian it will return "Nome".
